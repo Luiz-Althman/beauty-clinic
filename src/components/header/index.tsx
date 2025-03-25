@@ -102,6 +102,7 @@ export function Header() {
                     <Link
                         key={menu.id}
                         href={menu.path}
+                        aria-label={menu.name}
                         className="font-inter text-lg text-gray-700 hover:text-gray-500 transition-colors"
                         onClick={() => setIsMenuOpen(false)}
                     >

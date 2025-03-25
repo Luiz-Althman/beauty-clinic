@@ -24,6 +24,8 @@ export function Feedbacks() {
         <div className="relative flex flex-col items-center">
             <button
                 onClick={() => instanceRef.current?.prev()}
+                type="button"
+                name="Botão para voltar o ultimo feedback"
                 className="absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer text-white hidden md:block"
             >
                 <ChevronLeft size={42} />
@@ -52,7 +54,10 @@ export function Feedbacks() {
                                 <Avatar
                                     style={{ width: '60px', height: '60px' }}
                                 >
-                                    <AvatarImage src={feedback.img} />
+                                    <AvatarImage
+                                        src={feedback.img}
+                                        alt="Foto de perfil do do usuário que deixou o feedback"
+                                    />
                                     <AvatarFallback>
                                         {firstName}
                                         {lastName}
@@ -70,6 +75,8 @@ export function Feedbacks() {
             </div>
 
             <button
+                type="button"
+                name="Botão para prosseguir ao próximo feedback"
                 onClick={() => instanceRef.current?.next()}
                 className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-white hidden md:block"
             >
@@ -80,12 +87,14 @@ export function Feedbacks() {
                 {feedbacks.map((_, index) => (
                     <button
                         key={index}
+                        type="button"
                         onClick={() =>
                             instanceRef.current?.moveToIdx(index, true, {
                                 duration: 1000,
                             })
                         }
-                        className="text-gray-400 hover:text-gray-600 transition"
+                        className="text-gray-400 hover:text-gray-600 transition p-1.5"
+                        name="Botão de navegação dos feedbacks"
                     >
                         {currentSlide === index ? (
                             <FaCircle size={12} />
