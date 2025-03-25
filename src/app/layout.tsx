@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Judson } from 'next/font/google';
 import './globals.css';
+import { Whatsapp } from '@/components/whatsapp';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -32,7 +33,7 @@ export default function RootLayout({
             >
                 <div className="absolute -right-100 -top-100 bg-beige w-[1000px] h-[1000px] rounded-full -z-40 blur-[100px] hidden md:block" />
                 {children}
-
+                <Whatsapp />
                 <div className="absolute -left-50 bottom-0 bg-beige w-[700px] h-[500px] rounded-full -z-40 blur-[100px] hidden md:block" />
                 <div className="absolute -right-50 bottom-0 bg-beige w-[700px] h-[300px] rounded-full -z-40 blur-[100px] hidden md:block" />
             </body>
