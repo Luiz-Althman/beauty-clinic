@@ -28,8 +28,8 @@ export function SectionService() {
                     >
                         <Image
                             src={service.image}
-                            width={300}
-                            height={300}
+                            width={332}
+                            height={332}
                             alt={service.text}
                         />
                         <div className="bg-white/85 w-[235px] h-[150px] flex justify-center items-center absolute inset-0 m-auto">

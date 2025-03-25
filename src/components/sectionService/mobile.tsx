@@ -20,14 +20,14 @@ export function MobileServicesSlider() {
                 <div key={service.id} className="relative keen-slider__slide">
                     <Image
                         src={service.image}
-                        width={300}
-                        height={300}
+                        width={332}
+                        height={332}
                         alt={service.text}
                         className="rounded-md"
                     />
                     <div
                         id="price"
-                        className="bg-white/85 w-[235px] h-[150px] rounded-md flex justify-center items-center absolute top-1/4 left-8"
+                        className="bg-white/85 w-[235px] h-[150px] rounded-md flex justify-center items-center absolute top-1/4 left-10"
                     >
                         <p className="uppercase font-inter text-brown">
                             {service.text}

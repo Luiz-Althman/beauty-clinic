@@ -26,6 +26,7 @@ export function Feedbacks() {
                 onClick={() => instanceRef.current?.prev()}
                 type="button"
                 name="Botão para voltar o ultimo feedback"
+                aria-label="Botão para voltar o ultimo feedback"
                 className="absolute left-0 top-1/2 -translate-y-1/2 cursor-pointer text-white hidden md:block"
             >
                 <ChevronLeft size={42} />
@@ -77,6 +78,7 @@ export function Feedbacks() {
             <button
                 type="button"
                 name="Botão para prosseguir ao próximo feedback"
+                aria-label="Botão para prosseguir ao próximo feedback"
                 onClick={() => instanceRef.current?.next()}
                 className="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer text-white hidden md:block"
             >
@@ -95,6 +97,7 @@ export function Feedbacks() {
                         }
                         className="text-gray-400 hover:text-gray-600 transition p-1.5"
                         name="Botão de navegação dos feedbacks"
+                        aria-label="Botão de navegação dos feedbacks"
                     >
                         {currentSlide === index ? (
                             <FaCircle size={12} />
