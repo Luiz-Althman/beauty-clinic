@@ -7,7 +7,10 @@ import { FooterMobile } from './mobile';
 
 export function Footer() {
     return (
-        <footer className="mt-30 max-w-screen-xl mx-auto md:px-10 px-6">
+        <footer
+            className="mt-30 max-w-screen-xl mx-auto md:px-10 px-6"
+            id="contact"
+        >
             <FooterMobile />
             <div className="hidden md:flex justify-between w-full">
                 <div>

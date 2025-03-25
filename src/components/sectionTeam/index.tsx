@@ -4,7 +4,10 @@ import { Teammates } from './teammates';
 
 export function SeactionTeam() {
     return (
-        <section className="my-45 flex flex-col jusfity-center items-center z-10">
+        <section
+            className="my-45 flex flex-col jusfity-center items-center z-10"
+            id="team"
+        >
             <HeaderSection title="TEAM" className="text-center" />
             <div className="pb-16">
                 <h3 className="font-judson md:text-4xl text-2xl text-brown pb-6 text-center">
@@ -18,9 +21,7 @@ export function SeactionTeam() {
             <div className="md:hidden flex">
                 <MobileSectionTeammatesSlider />
             </div>
-            <div className="hidden md:flex">
-                <Teammates />
-            </div>
+            <Teammates />
         </section>
     );
 }

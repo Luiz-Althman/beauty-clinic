@@ -8,7 +8,7 @@ import { PriceBrands } from './priceBrands';
 
 export function SectionPrice() {
     return (
-        <section className="my-45 flex flex-col justify-end">
+        <section className="my-45 flex flex-col justify-end" id="preco">
             <div className="flex flex-col md:flex-row md:justify-between">
                 <div className="flex flex-col items-center justify-center md:block">
                     <HeaderSection title="PRICE" />
@@ -16,13 +16,11 @@ export function SectionPrice() {
                         Service fees for your beauty and body care
                     </h3>
                     <div className="flex items-end space-x-5 md:hidden">
-                        {/* Imagem dos cílios (Vem da esquerda) */}
                         <motion.div
-                            whileInView={{ x: [-100, 0], opacity: 1 }}
-                            initial={{ x: -100, opacity: 0 }}
+                            whileInView={{ scale: [0.8, 1], opacity: 1 }}
+                            initial={{ scale: 0.8, opacity: 0 }}
                             transition={{ duration: 0.6, ease: 'easeOut' }}
                             viewport={{ once: true }}
-                            className="flex flex-col items-end"
                         >
                             <Image
                                 src="/price-eyelash.png"
@@ -33,11 +31,14 @@ export function SectionPrice() {
                             />
                         </motion.div>
 
-                        {/* Imagem do cabelo (Vem da direita) */}
                         <motion.div
-                            whileInView={{ x: [100, 0], opacity: 1 }}
-                            initial={{ x: 100, opacity: 0 }}
-                            transition={{ duration: 0.6, ease: 'easeOut' }}
+                            whileInView={{ scale: [0.8, 1], opacity: 1 }}
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            transition={{
+                                duration: 0.6,
+                                delay: 0.2,
+                                ease: 'easeOut',
+                            }}
                             viewport={{ once: true }}
                         >
                             <Image
@@ -53,21 +54,39 @@ export function SectionPrice() {
                 </div>
                 <div className="md:flex items-end space-x-5 hidden">
                     <div className="flex flex-col items-end">
-                        <Image
-                            src="/price-eyelash.png"
-                            width={161}
-                            height={268}
-                            alt="Imagem mostrando penteado em cabelo de mulher"
-                        />
+                        <motion.div
+                            whileInView={{ scale: [0.8, 1], opacity: 1 }}
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            transition={{ duration: 0.6, ease: 'easeOut' }}
+                            viewport={{ once: true }}
+                        >
+                            <Image
+                                src="/price-eyelash.png"
+                                width={161}
+                                height={268}
+                                alt="Imagem mostrando penteado em cabelo de mulher"
+                                priority
+                            />
+                        </motion.div>
                     </div>
-                    <div>
+                    <motion.div
+                        whileInView={{ scale: [0.8, 1], opacity: 1 }}
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        transition={{
+                            duration: 0.6,
+                            delay: 0.2,
+                            ease: 'easeOut',
+                        }}
+                        viewport={{ once: true }}
+                    >
                         <Image
                             src="/price-hair.png"
                             width={275}
                             height={458}
                             alt="Ilustração de mulher em procedimento nos cílios"
+                            priority
                         />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <PriceBrands />

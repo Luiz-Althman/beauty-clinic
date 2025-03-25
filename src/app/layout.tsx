@@ -30,11 +30,11 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} ${judson.variable} overflow-x-hidden  relative bg-gray-200`}
             >
-                {/* <div className="absolute md:-right-100 md:-top-100 right-0 -top-20 bg-beige w-[100px] h-[100px] md:w-[1000px] md:h-[1000px] rounded-full -z-40 blur-[100px]" /> */}
+                <div className="absolute -right-100 -top-100 bg-beige w-[1000px] h-[1000px] rounded-full -z-40 blur-[100px] hidden md:block" />
                 {children}
 
-                {/* <div className="absolute -left-50 bottom-0 bg-beige w-[700px] h-[500px] rounded-full -z-40 blur-[100px]" />
-                <div className="absolute -right-50 bottom-0 bg-beige w-[700px] h-[300px] rounded-full -z-40 blur-[100px]" /> */}
+                <div className="absolute -left-50 bottom-0 bg-beige w-[700px] h-[500px] rounded-full -z-40 blur-[100px] hidden md:block" />
+                <div className="absolute -right-50 bottom-0 bg-beige w-[700px] h-[300px] rounded-full -z-40 blur-[100px] hidden md:block" />
             </body>
         </html>
     );

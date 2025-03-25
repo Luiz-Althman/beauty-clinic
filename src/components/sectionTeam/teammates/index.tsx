@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export function Teammates() {
     return (
-        <div className="flex justify-between w-full">
+        <div className="md:flex justify-between w-full hidden">
             {teammates.map((teammate) => (
                 <div
                     key={teammate.id}

@@ -14,7 +14,7 @@ export function Feedbacks() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
         loop: true,
-        slides: { perView: 1, spacing: 10 },
+        slides: { perView: 1 },
         slideChanged(slider) {
             setCurrentSlide(slider.track.details.rel);
         },

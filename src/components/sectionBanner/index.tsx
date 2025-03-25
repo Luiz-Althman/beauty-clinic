@@ -15,7 +15,6 @@ export function SectionBanner() {
                     Exclusive beauty clinic for you who are special
                 </h1>
                 <div className="relative md:hidden flex items-center justify-center my-6">
-                    {/* Estrela menor (entra primeiro) */}
                     <motion.span
                         whileInView={{ x: 0, opacity: 1 }}
                         initial={{ x: -50, opacity: 0 }}
@@ -32,7 +31,6 @@ export function SectionBanner() {
                         />
                     </motion.span>
 
-                    {/* Estrela média (entra depois) */}
                     <motion.span
                         whileInView={{ x: 0, opacity: 1 }}
                         initial={{ x: -50, opacity: 0 }}
@@ -49,7 +47,6 @@ export function SectionBanner() {
                         />
                     </motion.span>
 
-                    {/* Estrela maior (entra por último) */}
                     <motion.span
                         whileInView={{ x: 0, opacity: 1 }}
                         initial={{ x: -50, opacity: 0 }}
@@ -66,7 +63,6 @@ export function SectionBanner() {
                         />
                     </motion.span>
 
-                    {/* Imagem principal (entra da direita para a esquerda) */}
                     <motion.div
                         whileInView={{ x: 0, opacity: 1 }}
                         initial={{ x: 100, opacity: 0 }}
@@ -95,31 +91,69 @@ export function SectionBanner() {
                 </button>
             </div>
             <div className="relative hidden md:block">
-                <span className="absolute top-2/5 -left-25 rotate-5">
+                <motion.span
+                    whileInView={{ x: 0, opacity: 1 }}
+                    initial={{ x: -50, opacity: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    viewport={{ once: true }}
+                    className="absolute top-2/5 -left-25 rotate-5 z-20"
+                >
                     <Image
                         src="/star.png"
                         width={45}
                         height={45}
                         alt="Icone de estrela"
+                        priority
                     />
-                </span>
-                <span className="absolute top-3/5 -left-5 rotate-45">
+                </motion.span>
+
+                <motion.span
+                    whileInView={{ x: 0, opacity: 1 }}
+                    initial={{ x: -50, opacity: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="absolute top-3/5 -left-5 rotate-45 z-20"
+                >
                     <Image
                         src="/star.png"
                         width={39}
                         height={39}
                         alt="Icone de estrela"
+                        priority
                     />
-                </span>
-                <span className="absolute top-3/6 left-10 rotate-65" id="about">
+                </motion.span>
+
+                <motion.span
+                    whileInView={{ x: 0, opacity: 1 }}
+                    initial={{ x: -50, opacity: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    viewport={{ once: true }}
+                    className="absolute top-3/6 left-10 rotate-65 z-20"
+                >
                     <Image
                         src="/star.png"
                         width={20}
                         height={20}
                         alt="Icone de estrela"
+                        priority
                     />
-                </span>
-                <Image src="/img-banner.png" alt="" width={414} height={457} />
+                </motion.span>
+
+                <motion.div
+                    whileInView={{ x: 0, opacity: 1 }}
+                    initial={{ x: 100, opacity: 0 }}
+                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                    viewport={{ once: true }}
+                    className="z-10"
+                >
+                    <Image
+                        src="/img-banner.png"
+                        alt=""
+                        width={414}
+                        height={457}
+                        priority
+                    />
+                </motion.div>
             </div>
         </section>
     );

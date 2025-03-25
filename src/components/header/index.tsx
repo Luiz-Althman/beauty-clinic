@@ -6,17 +6,18 @@ import { useEffect, useState } from 'react';
 import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 
 const menus = [
-    { id: 1, name: 'About', path: '#about' },
-    { id: 2, name: 'Services', path: '#services' },
-    { id: 3, name: 'Price', path: '#price' },
-    { id: 4, name: 'Feedback', path: '#feedback' },
-    { id: 5, name: 'Our Team', path: '#team' },
-    { id: 6, name: 'Contact', path: '#contact' },
+    { id: 0, name: 'About', path: '#about' },
+    { id: 1, name: 'Services', path: '#services' },
+    { id: 2, name: 'Price', path: '#preco' },
+    { id: 3, name: 'Feedback', path: '#feedback' },
+    { id: 4, name: 'Our Team', path: '#team' },
+    { id: 5, name: 'Contact', path: '#contact' },
 ];
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isActive, setIsActive] = useState<number>();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -51,20 +52,21 @@ export function Header() {
                     />
                 </div>
 
-                {/* Menu Desktop */}
                 <nav className="hidden md:flex gap-5">
-                    {menus.map((menu) => (
+                    {menus.map((menu, i) => (
                         <Link
                             key={menu.id}
                             href={menu.path}
-                            className="font-inter text-xl transition-colors duration-300 text-gray-400 hover:text-gray-300"
+                            onClick={() => setIsActive(menu.id)}
+                            className={`font-inter text-xl transition-colors duration-300 text-gray-400 hover:text-gray-300 ${
+                                isActive === i && 'font-bold text-black'
+                            }`}
                         >
                             {menu.name}
                         </Link>
                     ))}
                 </nav>
 
-                {/* Botão do Menu Mobile */}
                 <button
                     className={`md:hidden text-gray-600 transition-transform duration-300 ${
                         isMenuOpen ? 'rotate-180' : 'rotate-0'
@@ -78,7 +80,6 @@ export function Header() {
                     )}
                 </button>
 
-                {/* Botão de Agendamento */}
                 <div className="hidden md:flex items-center gap-5">
                     <button
                         type="button"
@@ -89,7 +90,6 @@ export function Header() {
                 </div>
             </div>
 
-            {/* Menu Mobile com Animação */}
             <div
                 className={`absolute top-full left-0 w-full bg-gray-200 shadow-lg p-5 flex flex-col gap-3 transition-all duration-300 ease-in-out 
                 ${
