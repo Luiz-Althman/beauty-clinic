@@ -14,7 +14,7 @@ export function Feedbacks() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
         loop: true,
-        slides: { perView: 1 },
+        slides: { perView: 1, spacing: 10 },
         slideChanged(slider) {
             setCurrentSlide(slider.track.details.rel);
         },
@@ -29,7 +29,10 @@ export function Feedbacks() {
                 <ChevronLeft size={42} />
             </button>
 
-            <div ref={sliderRef} className="keen-slider md:w-full w-[350px] ">
+            <div
+                ref={sliderRef}
+                className="keen-slider md:max-w-[766px] max-w-[330px]"
+            >
                 {feedbacks.map((feedback) => {
                     const name = feedback.name.split(' ');
                     const firstName = name[0]?.[0] || '';
@@ -77,7 +80,11 @@ export function Feedbacks() {
                 {feedbacks.map((_, index) => (
                     <button
                         key={index}
-                        onClick={() => instanceRef.current?.moveToIdx(index)}
+                        onClick={() =>
+                            instanceRef.current?.moveToIdx(index, true, {
+                                duration: 1000,
+                            })
+                        }
                         className="text-gray-400 hover:text-gray-600 transition"
                     >
                         {currentSlide === index ? (
