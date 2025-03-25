@@ -21,7 +21,7 @@ export function MobileServicesSlider() {
                     <Image
                         src={service.image}
                         width={332}
-                        height={332}
+                        height={302}
                         alt={service.text}
                         className="rounded-md"
                     />
